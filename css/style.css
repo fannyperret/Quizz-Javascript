@@ -2,35 +2,6 @@ body {
   color: rgba(0, 0, 0, 0.92);
 }
 
-#after_response {
-  visibility: visible;
-}
-
-#after_submit {
-  margin-top: -250px;
-  visibility: hidden;
-}
-
-.widthWrap {
-  display: block;
-  margin: auto;
-  max-width: 900px;
-  min-width: 200px;
-}
-
-.blackBlock {
-  border: 4px solid #DBBB59;
-}
-
-.smallValue {
-  margin-bottom: 200px;
-  border-bottom: 1px solid;
-}
-
-.quiz {
-  text-align: center;
-}
-
 h1 {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -46,6 +17,37 @@ h2 {
   font-weight: bold;
 }
 
+#after_response {
+  visibility: visible;
+  margin-bottom: 30px;
+}
+
+#after_submit {
+  margin-top: -350px;
+  visibility: hidden;
+  max-width: 600px;
+}
+
+.widthQuiz {
+  display: block;
+  margin: auto;
+  max-width: 900px;
+  min-width: 200px;
+}
+
+.titleBlock {
+  border: 4px solid #DBBB59;
+}
+
+.smallValue {
+  margin-bottom: 200px;
+  border-bottom: 1px solid;
+}
+
+.quiz {
+  text-align: center;
+}
+
 .asterix {
   font-family: 'Source Serif Pro', sans-serif;
   font-size: 26px;
@@ -54,6 +56,7 @@ h2 {
 .spanIntro {
   display: block;
   margin: auto;
+  margin-top: -40px;
   max-width: 600px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 26px;
@@ -70,7 +73,7 @@ h2 {
   font-size: 24px;
 }
 
-.payInput {
+.responseInput {
   color: rgba(0, 0, 0, 0.92);
   font-size: 1.2em;
   text-align: right;
@@ -96,7 +99,7 @@ h2 {
   background-color: #DBBB59;
 }
 
-.answer-1{
+.answer-0{
   font-family: 'Oswald', sans-serif;
   font-size: 25px;
 }
@@ -106,7 +109,7 @@ h2 {
 }
 
 a {
-  margin-top: -40px;
+  margin-top: -245px;
   float: right;
   font-family: 'Arial';
   color: #333333;
@@ -114,10 +117,14 @@ a {
   text-decoration: none;
 }
 
-.card_link:hover {
+/* .card_link:hover {
   text-decoration: solid;
-}
+} */
 
 .fas:hover {
-  margin-top: 5px;
+  /* margin-top: -246px; */
+}
+
+.moreExplanation {
+  margin-bottom: 70px;
 }
