@@ -54,7 +54,7 @@ h2 {
 
 .smallValue {
   margin-bottom: 200px;
-  border-bottom: 1px solid;
+  /* border-bottom: 1px solid; */
 }
 
 .asterix {
@@ -118,20 +118,12 @@ h2 {
 }
 
 a {
-  margin-top: -245px;
+  margin-top: -50px;
   float: right;
   font-family: 'Arial';
   color: #333333;
   font-size: 18px;
   text-decoration: none;
-}
-
-/* .card_link:hover {
-  text-decoration: solid;
-} */
-
-.fas:hover {
-  /* margin-top: -246px; */
 }
 
 .moreExplanation {
