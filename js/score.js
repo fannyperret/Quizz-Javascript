@@ -1,6 +1,5 @@
 function check() {
 
-  var count = 63;
   var question0 = document.after_response.question0.value;
 
   // swift (question0) {
