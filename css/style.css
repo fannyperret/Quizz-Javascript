@@ -20,6 +20,7 @@ h2 {
 #after_response {
   visibility: visible;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #after_submit {
@@ -42,10 +43,6 @@ h2 {
 .smallValue {
   margin-bottom: 200px;
   border-bottom: 1px solid;
-}
-
-.quiz {
-  text-align: center;
 }
 
 .asterix {

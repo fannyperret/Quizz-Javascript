@@ -1,15 +1,31 @@
 function check() {
 
-  var question0 = document.quiz.question0.value;
-  var correct = ["C'est une bonne réponse !"];
+  var count = 63;
+  var question0 = document.after_response.question0.value;
 
-  if (question0 == "63") {
-    correct;
+  swift (question0) {
+    case: "";
+    case: < count;
+    console.log("C'est beaucoup plus !");
+    break;
+    case > 63;
+    console.console.log(("C'est un peu moins"));
+    break;
+    case: == count;
+    console.log("C'est une bonne réponse !");
+    document.getElementById("after_response").style.visibility = "hidden";
+    document.getElementById("after_submit").style.visibility = "visible";
+    break;
+
   }
 
-  document.getElementById("after_response").style.visibility = "hidden";
-  document.getElementById("after_submit").style.visibility = "visible";
+  //
+  // if (question0 == "") {
+  //   alert("Vous n'avez même pas essayé ! Répondez à la question !");
+  // } else {
+  //   alert("C'est une bonne réponse !");
+  //   document.getElementById("after_response").style.visibility = "hidden";
+  //   document.getElementById("after_submit").style.visibility = "visible";
+  // }
 
-  document.getElementById("rightOrWrong").innerHTML = correct;
-  document.getElementById("answer-0")
 }
