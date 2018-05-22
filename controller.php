@@ -1,8 +1,8 @@
 <?php
+// Returning JSON from a Php Script
 header('content-type:application/json');
-
 $questions = json_decode(file_get_contents('quiz.json'));
-
+// Holds the name of the method for a form submission to restrict your form procesing only form POST type request
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $id = intval($_POST['id']);
@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             ];
 
             if ($value === $question->answer) {
-                $result["yourEstimation"] = "Bonne réponse " . $value;
+                $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est une bonne réponse !";
             } elseif ($value < $question->answer) {
-                $result["yourEstimation"] = "Vous avez repondu " . $value . " c'est moins de " . ($question->answer - $value);
+                $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est PLUS ! Il y a un écart de " . ($question->answer - $value) . " avec la véritable réponse.";
             } elseif ($value > $question->answer) {
-                $result["yourEstimation"] = "Vous avez repondu " . $value . " c'est plus de " . ($value - $question->answer);
+                $result["yourEstimation"] = "Vous avez repondu " . $value . ": c'est MOINS ! Il y a un écart de " . ($value - $question->answer) . " avec la véritable réponse.";
             } else {
                 $result["yourEstimation"] = "Votre réponse est Improbable";
             }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         } else {
             echo json_encode([
-                "error" => "Repondez avec des chiffres",
+                "error" => "Répondez à la question !",
                 "id" => $id
             ]);
         }
