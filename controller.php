@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             } elseif ($value < $question->answer) {
                 $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est PLUS ! Il y a un écart de " . ($question->answer - $value) . " avec la véritable réponse.";
             } elseif ($value > $question->answer) {
-                $result["yourEstimation"] = "Vous avez repondu " . $value . ": c'est MOINS ! Il y a un écart de " . ($value - $question->answer) . " avec la véritable réponse.";
+                $result["yourEstimation"] = "Vous avez répondu " . $value . ": c'est MOINS ! Il y a un écart de " . ($value - $question->answer) . " avec la véritable réponse.";
             } else {
                 $result["yourEstimation"] = "Votre réponse est Improbable";
             }

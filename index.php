@@ -37,8 +37,7 @@
 
             <div id="error_<?php echo $id; ?>" class="error"></div>
             <input id="question_<?php echo $id; ?>" data-button="button_<?php echo $id; ?>"
-            class="responseInput" name="question_<?php echo $id; ?>" type="number"
-            maxlength="2" autofocus>
+            class="responseInput" name="question_<?php echo $id; ?>" type="text" autofocus>
             <span class="currency"><?php echo $question->currency; ?></span>
             <br/>
             <button id="button_<?php echo $id; ?>" type="button" data-question="<?php echo $id; ?>"
