@@ -5,37 +5,53 @@ $questions = json_decode(file_get_contents('quiz.json'));
 // Holds the name of the method for a form submission to restrict your form procesing only form POST type request
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    $id = intval($_POST['id']);
+    $id = $_POST['id'];
     $value = $_POST['value'];
 
     if (isset($questions[$id])) {
         $question = $questions[$id];
-        // If empty
+
+        // EMPTY
         if (empty($value)) {
           echo json_encode([
               "error" => "Répondez à la question !",
               "id" => $id
           ]);
 
-        } elseif (is_numeric($value)) {
-            $value = intval($value);
-            $result = [
-                "id" => $id,
-                "title" => $question->titleAnswer,
-                "text" => $question->textAnswer,
-                "yourEstimation" => "",
-            ];
-            if ($value === $question->answer) {
-                $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est une bonne réponse !";
-            } elseif ($value < $question->answer) {
-                $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est PLUS ! Il y a un écart de " . ($question->answer - $value) . " avec la véritable réponse.";
-            } elseif ($value > $question->answer) {
-                $result["yourEstimation"] = "Vous avez répondu " . $value . ": c'est MOINS ! Il y a un écart de " . ($value - $question->answer) . " avec la véritable réponse.";
+        // IS_NUMERIC
+        } elseif (is_numeric($question->answer)) {
+            if ($question->answer != is_numeric($value)) {
+              echo json_encode([
+                "error" => "On met des chiffres !",
+                "id" => $id
+              ]);
             } else {
-                $result["yourEstimation"] = "Votre réponse est Improbable";
+              $result = [
+                  "id" => $id,
+                  "title" => $question->titleAnswer,
+                  "text" => $question->textAnswer,
+                  "yourEstimation" => "",
+              ];
+              if ($value === $question->answer) {
+                  $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est une bonne réponse !";
+              } elseif ($value < $question->answer) {
+                  $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est PLUS ! Il y a un écart de " . ($question->answer - $value) . " avec la véritable réponse.";
+              } elseif ($value > $question->answer) {
+                  $result["yourEstimation"] = "Vous avez répondu " . $value . ": c'est MOINS ! Il y a un écart de " . ($value - $question->answer) . " avec la véritable réponse.";
+              } else {
+                  $result["yourEstimation"] = "Votre réponse est Improbable";
+              }
+              echo json_encode($result);
             }
-            echo json_encode($result);
 
+        // IS_LETTERS
+      } elseif (ctype_alpha($question->answer)) {
+        $value = ucfirst(strtolower(trim($value)));
+        if ($question->answer != ctype_alpha($value)) {
+          echo json_encode([
+            "error" => "On met des lettres !",
+            "id" => $id
+          ]);
         } else {
           $result = [
               "id" => $id,
@@ -46,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
           if ($value === $question->answer) {
             $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est EXACT !";
           } else {
-            $result["yourEstimation"] = "Désolé ! Ce n'est pas la bonne réponse...";
+            $result["yourEstimation"] = "Vous avez répondu " . $value . "Désolé ! Ce n'est pas la bonne réponse...";
           }
           echo json_encode($result);
         }
@@ -58,5 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         ]);
     }
 
+  }
 
 }

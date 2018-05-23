@@ -96,3 +96,7 @@ h1 {
 .currency {
   font-size: 30px;
 }
+
+.error {
+  color: red;
+}

@@ -33,8 +33,9 @@ function addAnswer(answer) {
 }
 
 function addError(error) {
-    let html = error.error;
+    let html = "";
     let id = error.id;
+    html += "<p class='error'>" + error.error + "</p>";
     $('#error_' + id).html(html);
 }
 
