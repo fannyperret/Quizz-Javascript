@@ -10,7 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if (isset($questions[$id])) {
         $question = $questions[$id];
-        if (is_numeric($value)) {
+        // If empty
+        if (empty($value)) {
+          echo json_encode([
+              "error" => "Répondez à la question !",
+              "id" => $id
+          ]);
+
+        } elseif (is_numeric($value)) {
             $value = intval($value);
             $result = [
                 "id" => $id,
@@ -18,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 "text" => $question->textAnswer,
                 "yourEstimation" => "",
             ];
-
             if ($value === $question->answer) {
                 $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est une bonne réponse !";
             } elseif ($value < $question->answer) {
@@ -28,16 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             } else {
                 $result["yourEstimation"] = "Votre réponse est Improbable";
             }
-
             echo json_encode($result);
 
         } else {
-            echo json_encode([
-                "error" => "Répondez à la question !",
-                "id" => $id
-            ]);
+          $result = [
+              "id" => $id,
+              "title" => $question->titleAnswer,
+              "text" => $question->textAnswer,
+              "yourEstimation" => "",
+          ];
+          if ($value === $question->answer) {
+            $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est EXACT !";
+          } else {
+            $result["yourEstimation"] = "Désolé ! Ce n'est pas la bonne réponse...";
+          }
+          echo json_encode($result);
         }
-
 
     } else {
         echo json_encode([
