@@ -1,27 +1,33 @@
 [
   {
     "name": "Question 1 : Féminicide indien.",
+    "type": "numeric",
     "intro": "L'Inde compte 1,3 milliard d'habitants mais connaît un déséquilibre important du ratio hommes-femmes.",
     "question": "Savez-vous de combien de millions de femmes manquent à l'Inde ?",
-    "answer": 63,
+    "answer": 63.92,
+    "aliasAnswer": [63, 64, 63.4, 63.46],
+    "rangeAnswer": [63, 64],
     "currency": "Millions",
     "titleAnswer": "Il manque plus de 63 millions de femme en Inde.",
     "textAnswer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "name": "Question 2 : Bla bla bla bla.",
+    "type": "numeric",
     "intro": "INTRO 2 : Blabla bla bla bla bla.",
     "question": "Blabla bla bla bla bla ?",
-    "answer": 1,
+    "answer": 1.1,
     "currency": "€",
     "titleAnswer": "Réponse 2 : Blabla bla bla",
     "textAnswer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
     "name": "Question 3 : Bla bla blablabla.",
+    "type": "alpha",
     "intro": "INTRO 3 : Bla blab la blablabla.",
     "question": "Blabla bla bla bla bla ?",
-    "answer": "Fanny",
+    "answer": "18 juin",
+    "aliasAnswer": ["18 06", "18/06", "18.06", "18 6", "18/6", "18.6", "dix-huit juin"],
     "currency": "",
     "titleAnswer": "Réponse 3 : Bla bla bla bla.",
     "textAnswer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
