@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
           if ($value === $question->answer) {
             $result["yourEstimation"] = "Vous avez répondu " . $value . " : c'est EXACT !";
           } else {
-            $result["yourEstimation"] = "Vous avez répondu " . $value . "Désolé ! Ce n'est pas la bonne réponse...";
+            $result["yourEstimation"] = "Vous avez répondu " . $value . " : désolé ! Ce n'est pas la bonne réponse...";
           }
           echo json_encode($result);
         }
